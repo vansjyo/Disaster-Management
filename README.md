@@ -1,6 +1,5 @@
 ## Idea for Microsoft-Codefundo++
 * what are you planning to build.
-* the technologies used and required.
 * how does it work.
 * how can users get started with the project.
 * datasets used or any exisiting information to be used.
