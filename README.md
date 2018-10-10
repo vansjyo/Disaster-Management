@@ -5,4 +5,4 @@
 * datasets used or any exisiting information to be used.- basic facts regarding a specific disaster
 * what technologies are you using.nodejs mongodb html5 css 
 - The web application will be developed using Node.js 
-- HTML5 Geolocation API: For the purpose of tracking current loction
+- HTML5 Geolocation API: For the purpose of tracking current location
