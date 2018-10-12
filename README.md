@@ -1,5 +1,4 @@
 # Idea for codefundo++
-_____________________________
 
 ## What are we planning to build?
 A web application which helps to **manage** natural disasters. Predominantly, it comprises of the following 4 features:
