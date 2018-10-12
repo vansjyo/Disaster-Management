@@ -15,7 +15,7 @@ A web application which helps to **manage** natural disasters. Predominantly, it
 * To **request for help**, the current location of the person is detected using HTML5 Geolocation API and accordingly, an entry is made into the database alongwith the type of help required (food/shelter/monetary). People can then reach out to help people who need it, in their nearby locations.
 
 * **SOS 101** is essentially a primer to get people acquainted with the basic DOs and DON'Ts they should take care of, in the face of any natural disaster. It will guide them to get started with helping themselves before any external help is approached. 
-## How users can get started with the project?
+
 ## What dataset(s) are we using?
 Dataset will be required for the purpose of making predictions from weather reports. We are using [ThingSpeak](https://in.mathworks.com/products/thingspeak.html) with [MATLAB](https://in.mathworks.com/help/thingspeak/collect-data-in-a-new-channel.html) for the purpose. 
 
