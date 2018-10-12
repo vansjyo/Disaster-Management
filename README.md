@@ -20,7 +20,7 @@ Dataset will be required for the purpose of making predictions from weather repo
 * HTML5
 * CSS
 #### APIs to be used:
-* HTML5 Geolocation API: For the purpose of tracking current location
+* HTML5 Geolocation API: For the purpose of tracking current location or reporting missing person's location.
 * ThingSpeak API: For collecting and storing sensor data in the cloud and making weather predictions
 
 
