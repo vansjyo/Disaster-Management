@@ -16,7 +16,8 @@ label { font-size: 14px; color: #4d4d4d; cursor: pointer; display: block; font-w
 /* --------------------------------------- GRID Layout ----------------------------------------- */
 * { box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
 body { margin: 0 auto }
-.grid { margin: 0 auto; max-width: 1200px; width: 100%;padding: 0 20px; }
+.grid { margin: 0 auto; max-width: 1200px; width: 100%;padding: 0 20px; background-color:#eeeeee;}
+.footer-grid { margin: 0 auto; max-width: 1200px; width: 100%;padding: 0 20px; background-color:#212121;}
 /* You can choose the grid 1200 or 1140 or 1024 or 960 as per your requirement */
 .g1140 { margin: 0 auto; max-width: 1140px; width: 100%; }
 .g1024 { margin: 0 auto; max-width: 1024px; width: 100%; }
@@ -292,6 +293,7 @@ ul.social-links li { background: #333; float: left; font-size: 12px; list-style:
 ul.social-links li:hover { -webkit-transform: rotate(360deg); -moz-transform: rotate(360deg); -o-transform: rotate(360deg); }
 ul.social-links li a.facebook { background: url(../images/socialpack/facebook.png) 50% 50% no-repeat }
 ul.social-links li a.twitter { background: url(../images/socialpack/twitter.png) 50% 50% no-repeat }
+ul.social-links li a.github { background: url(../images/socialpack/github.png) 50% 50% no-repeat }
 ul.social-links li a.google { background: url(../images/socialpack/google.png) 50% 50% no-repeat }
 ul.social-links li a.dribbble { background: url(../images/socialpack/dribbble.png) 50% 50% no-repeat }
 ul.social-links li a.vimeo { background: url(../images/socialpack/vimeo.png) 50% 50% no-repeat }
@@ -300,6 +302,7 @@ ul.social-links li a.rss { background: url(../images/socialpack/rss.png) 50% 50%
 ul.social-links li a.linkedin { background: url(../images/socialpack/linkedin.png) 50% 50% no-repeat }
 ul.social-links li a.pinterest { background: url(../images/socialpack/pinterest.png) 50% 50% no-repeat }
 ul.social-links>li.facebook-link:hover { float: left; font-size: 12px; width: 32px; height: 32px; background: #415b92; }
+ul.social-links>li.github-link:hover { float: left; font-size: 12px; width: 32px; height: 32px; background: #415b92; }
 ul.social-links>li.twitter-link:hover { float: left; font-size: 12px; width: 32px; height: 32px; background: #10A3C3; }
 ul.social-links>li.google-link:hover { float: left; font-size: 12px; width: 32px; height: 32px; background: #f54a35; }
 ul.social-links>li.dribbble-link:hover { float: left; font-size: 12px; width: 32px; height: 32px; background: #fd83af; }
