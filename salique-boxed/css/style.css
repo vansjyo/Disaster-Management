@@ -440,7 +440,6 @@ ul.accordion>li.active .content { background: white; display: block; border-left
 #ticker { height: 145px; overflow-y: hidden; position: relative; }
 #ticker ul.tweet_list { position: absolute; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; }
 #ticker ul.tweet_list li { height: 145px }
-.tweet, .query { }
 .tweet_list { -webkit-border-radius: 0.5em; -moz-border-radius: 0.5em; border-radius: 0.5em; list-style: none; margin: 0; padding: 0; overflow-y: hidden; }
 .tweet_list li { overflow-y: auto; overflow-x: hidden; padding: 0.5em; list-style-type: none; }
 .tweet_list li a { color: #0C717A }
@@ -602,3 +601,8 @@ box-shadow: 0 4px 25px rgba(0,0,0,0.3);}
 .noborder { border: 0px }
 .clear {clear:both;}
 .error input,input.error,.error textarea,textarea.error{background-color: #ffffff;  border: 1px solid #eb9468 !Important;  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s; -moz-transition: border linear 0.2s, box-shadow linear 0.2s;-o-transition: border linear 0.2s, box-shadow linear 0.2s; transition: border linear 0.2s, box-shadow linear 0.2s;}.error label,label.error{color:#c60f13;}.error small,small.error{display:block;padding:6px 4px;margin-top:-13px;margin-bottom:12px;background:#c60f13;color:#fff;font-size:12px;font-weight:bold;-moz-border-radius-bottomleft:2px;-webkit-border-bottom-left-radius:2px;border-bottom-left-radius:2px;-moz-border-radius-bottomright:2px;-webkit-border-bottom-right-radius:2px;border-bottom-right-radius:2px;}.error textarea:focus,textarea.error:focus{background:#fafafa;border-color: #b3b3b3;}
+@media only screen and (max-width : 400px) {
+             .undermenuarea{
+             	display: none;
+             }
+          }
