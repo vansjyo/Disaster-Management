@@ -1,0 +1,135 @@
+   <!DOCTYPE html> 
+   <html>
+   <head>
+
+    <title>Chips | NITK ONLINE DELIVERY</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" initial-scale="1.0">
+    <meta name="description" content="online coop service nitk">
+    <meta name="keywords" content="nitk online coop">
+
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Suez+One">
+    <link rel="stylesheet" href="/assets/css/flexslider.css" type="text/css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/buypages.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   
+  </head>
+
+  <body class="white">
+
+
+    <!-- header  -->
+    <% include partials/buyheader.ejs %>
+    <!-- ////header -->
+
+    <!-- side nav menu -->
+    <% include partials/sidenav.ejs %>
+
+
+    <!-- ////side nav menu -->
+
+    <main>
+
+      <!-- center image -->
+      <div class="div3"><img src="/assets/images/back.jpg" id="backimg" width="100%" style="display: none"></div>
+      <!-- ///center image -->
+
+
+      <br><br>
+
+      <% if(messages.info){ %>
+        <div class="card-panel blue lighten-4 black-text text-darken-4 acme" id="msg"><%= messages.info %><br><br>
+          <center><button class="btn waves-effect waves-teal center" onclick="fademe()">OK</button></center>
+        </div>
+      <% } %>
+
+      <h5 class="coll acme margin10 cyan-text text-darken-4"><b> CHIPS</b></h5>
+      <div class="divider"></div><br>
+
+
+      <div class="row">
+        <%chips.forEach(chip => {%>
+        <% var img_name = "/assets/images/" + chip.item_name + ".jpg" %>
+
+        <div class="col m3 s12" id="items">
+          <div class="card-panel" id="me">
+              <center><a class="modal-trigger center" href="#modal1"><img id="get_img" alt="<%= chip.item_name %>" class="responsive-img" src="<%= img_name %>" width="150px" height="150px"></a></center>
+              <div class="card-content" id="she">
+              <div class="divider"></div>
+              <span class="item_name capital"><%= chip.item_name %></span><br>
+              <div class="chip margin10 camel">quantity left</div>
+              <span class="quantity_left"><%= chip.item_quantity - chip.item_defect %></span><br>
+              <div class="chip margin10 camel">Price</div>
+              <span class="item_price"><%= chip.item_price %></span><br>
+              <span class="item_no white-text"><%= chip.item_no %></span>
+              <a class="chip right waves-effect waves-light teal accent-4 white-text" id="clicktoadd">Add to cart</a>
+              <br>
+            </div>
+          </div>
+        </div>
+        
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+        <div class="modal-content">
+        <h3 class="center" id="fetch_imgname"></h3>
+        <center><img id="push_img" class="responsive-img"></center>
+        </div>
+        </div>
+  
+
+        <% });%>
+      </div>
+    </main>
+
+    
+
+    <!-- footer -->
+    <% include partials/footer.ejs %>
+    <!-- <div id="myModal" class="modal">
+    <i class="material-icons close right">close</i>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+    </div> -->
+    <!-- ////footer -->
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script> 
+    <script src="/assets/js/jquery.flexslider.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="/assets/js/todo-list.js"></script>
+    <script>
+      $("#chips").addClass("teal");
+      $("#chips").addClass("darken-1");
+      $("#eatables").addClass("active");
+      $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+  });
+      $('#modal1').openModal();
+      $('#modal1').closeModal();
+    </script>
+
+    <script type="text/javascript">
+      $("img#get_img").on('click',function(){ 
+        var img_src = this.src;
+        var img_alt = $(this).attr('alt');
+        console.log(img_src);
+        $("img#push_img").attr('src',img_src);
+        $("#fetch_imgname").html(img_alt);
+      });
+
+    </script>
+    
+    
+
+  </body>
+  </html>
