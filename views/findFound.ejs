@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Salique Theme Multipurpose Responsive </title>
+<!-- STYLES & JQUERY 
+	================================================== -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="/assets/css/icons.css"/>
+	<link rel="stylesheet" type="text/css" href="/assets/css/skinblue.css"/><!-- Change skin color here -->
+	<link rel="stylesheet" type="text/css" href="/assets/css/responsive.css"/>
+	<style>
+	tr:hover{
+		cursor: pointer;}
+	</style>
+</head>
+</head>
+<body>
+	<div class="boxedtheme">
+
+<!-- TOP LOGO & MENU
+	================================================== -->
+	<% include partials/header.ejs %>
+	<!-- ================/TOP LOGO & MENU============= -->
+
+<!-- SUBHEADER
+	================================================== -->
+	<% include partials/sub_header.ejs %>
+	<!-- ================/SUBHEADER=================== -->
+
+<!-- CONTENT
+	================================================== -->
+	
+	<div class="grid" style="padding-top:1%;">
+		<div class="row space-bot">
+			<!--INTRO-->
+			<div class="c12">
+				<div class="royalcontent">
+					<h1 class="royalheader">FOUND PEOPLE</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<table class="table table-bordered .table-responsive">
+		<thead class="thead-dark">
+			<tr class="clickable-row" data-href="/">
+				<th scope="col">#</th>
+				<th scope="col">Name</th>
+				<th scope="col">Address</th>
+				<th scope="col">City</th>
+				<th scope="col">State</th>
+				<th scope="col">Gender</th>
+				<th scope="col">Age</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% var i=1; %>
+			<%people_found.forEach(x => {%>
+			<% var url = "/profileFound/" + x._id %>
+			<tr class="clickable-row" data-href="<%= url %>">
+				<th scope="row"><%= i++ %></th>
+				<td><%= x.found_name %></td>
+				<td><%= x.found_address %></td>
+				<td><%= x.found_city %></td>
+				<td><%= x.found_state %></td>
+				<td><%= x.found_gender %></td>
+				<td><%= x.found_age %></td>
+			</tr>
+			<% });%>
+		</tbody>
+	</table>
+	
+	<!-- ==================CONTENT=================== -->
+
+<!-- FOOTER
+	================================================== -->
+	<% include partials/footer.ejs %>
+	<!-- =================/FOOTER===================== -->
+
+</div>
+
+
+<!-- JAVASCRIPTS
+	================================================== -->
+	<!-- all-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<!-- all-->
+	<script src="/assets/js/modernizr-latest.js"></script>
+
+	<!-- menu & scroll to top -->
+	<script src="/assets/js/common.js"></script>
+
+
+	<!-- CALL Showcase - change 5 from min:5 and max:5 to the number of items you want visible -->
+
+	<!-- CALL opacity on hover images -->
+	
+
+	<!-- CALL tabs -->
+	<script>
+		$(document).ready(function() {
+			$(".clickable-row").click(function() {
+				window.location = $(this).data("href");
+			});
+		});
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function() {	
+			$('#tabs li a:not(:first)').addClass('inactive');
+			$('.container:not(:first)').hide();	
+			$('#tabs li a').click(function(){		
+				var t = $(this).attr('href');
+		if($(this).hasClass('inactive')){ //added to not animate when active
+			$('#tabs li a').addClass('inactive');		
+			$(this).removeClass('inactive');
+			$('.container').hide();
+			$(t).fadeIn('slow');	
+		}			
+		return false;
+	}) //end click
+		});
+	</script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+</body>
+</html>

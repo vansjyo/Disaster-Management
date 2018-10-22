@@ -1,0 +1,304 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Salique Theme Multipurpose Responsive </title>
+<!-- STYLES & JQUERY 
+	================================================== -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="/assets/css/icons.css"/>
+	<link rel="stylesheet" type="text/css" href="/assets/css/skinblue.css"/><!-- Change skin color here -->
+	<link rel="stylesheet" type="text/css" href="/assets/css/responsive.css"/>
+
+</head>
+<body>
+	<div class="boxedtheme">
+
+
+<!-- TOP LOGO & MENU
+	================================================== -->
+	<% include partials/header.ejs %>
+	<!-- ================/TOP LOGO & MENU============= -->
+
+
+<!-- SUBHEADER
+	================================================== -->
+	<% include partials/sub_header.ejs %>
+	<!-- ================/SUBHEADER=================== -->
+
+
+<!-- CONTENT
+	================================================== -->
+
+
+<!-- ALERT MESSAGE
+	================================================== -->
+	<% if(messages.info){ %>
+	<div class="alert alert-info" role="alert">
+		<%= messages.info %>
+	</div>
+	<% } %>
+	<!--===================/ALERT===================== -->
+
+
+<!-- FORM
+	==================================================  -->
+	<div class="grid" style="padding-top:5%;">
+
+		<div class="row space-bot">
+			<!--INTRO-->
+			<div class="c12">
+				<div class="royalcontent">
+					<h1 class="royalheader">REPORT FOUND PEOPLE</h1>
+				</div>
+			</div>
+
+			<!--INTRO-->
+			<div class="c12">
+				<div class="royalcontent">
+					<h1 class="h6 border">Please fill out this form</h1>
+				</div>
+			</div>
+		</div>
+
+		<div class="row d-flex justify-content-center space-bot">
+			<div class="col-md-9 border border-primary">
+
+				<!-- note -->
+				<div class="h6 bg-info" style="padding: 10px;">NOTE : Please try to provide us with unique identification details such as emailID and contact number of the missing person so that the finding process is easier.</div>
+
+				<!-- FORM start -->
+				<form action="/reportFound" method="post" class="needs-validation" novalidate style="padding: 10px;">
+
+					<!-- info -->
+					<div class="border h6"><span class="glyphicon glyphicon-info-sign"></span>
+						Please first enter the details of the reporting person i.e. your details
+					</div><br>
+
+				<!-- FORM FOR REPORTING PERSON DETAILS
+					============================================= -->
+					<div class="form-row">
+						<div class="col-md-12 mb-3">
+							<label>Full Name*</label>
+							<input type="text" class="form-control" name="rf_name" placeholder="Full Name" required>
+							<div class="invalid-feedback">
+								Please provide a name.
+							</div>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="col-md-12 mb-3">
+							<label>Your Permanant Address*</label>
+							<input type="text" class="form-control" name="rf_address" placeholder="Address" required>
+							<div class="invalid-feedback">
+								Please provide a valid address.
+							</div>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="col-md-4 mb-3">
+							<label>Email ID</label>
+							<input type="email" class="form-control" name="rf_email" placeholder="Email">
+							<div class="invalid-feedback">
+								Please provide a valid email ID.
+							</div>
+						</div>
+						<div class="col-md-4 mb-3">
+							<label>Contact Number*</label>
+							<input type="number" class="form-control" name="rf_contact1" placeholder="919611582354" maxlength="12" required>
+							<div class="invalid-feedback">
+								Please provide a valid contact number.
+							</div>
+						</div>
+						<div class="col-md-4 mb-3">
+							<label>Alternate Contact Number</label>
+							<input type="number" class="form-control" name="rf_contact2"" placeholder="Phone">
+							<div class="invalid-feedback">
+								Please provide a valid contact number.
+							</div>
+						</div>
+					</div>
+					<!-- =================REPROTING DETAILS END==========================-->
+
+				<!--FORM FOR MISSING PERSON DETAILS
+					=================================================== -->
+					<div class="border h6"><span class="glyphicon glyphicon-info-sign"></span>
+						Please enter the details of the found person
+					</div><br>
+
+
+					<div class="form-row">
+						<div class="col-md-12 mb-3">
+							<label>Full Name*</label>
+							<input type="text" class="form-control" name="f_name" placeholder="Full Name" required>
+							<div class="invalid-feedback">
+								Please provide the name.
+							</div>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="col-md-12 mb-3">
+							<label>Permanant Address*</label>
+							<input type="text" class="form-control" name="f_address" placeholder="Address" required>
+							<div class="invalid-feedback">
+								Please provide a valid address.
+							</div>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="col-md-4 mb-3">
+							<label>City*</label>
+							<input type="text" class="form-control" name="f_city" placeholder="City" required>
+							<div class="invalid-feedback">
+								Please provide a valid city.
+							</div>
+						</div>
+						<div class="col-md-4 mb-3">
+							<label>State*</label>
+							<input type="text" class="form-control" name="f_state" placeholder="State" required>
+							<div class="invalid-feedback">
+								Please provide a valid state.
+							</div>
+						</div>
+						<div class="col-md-4 mb-3">
+							<label>Zip*</label>
+							<input type="number" class="form-control" name="f_zip" placeholder="Zip" required>
+							<div class="invalid-feedback">
+								Please provide a valid zip.
+							</div>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="col-md-6 mb-3">
+							<label>Gender*</label>
+							<select id="f_gender" name="f_gender" class="custom-select" required>
+								<option selected disabled="true">Open this select menu</option>
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
+								<option value="Other">Other</option>
+							</select>
+							<div class="invalid-feedback">
+								Please choose an option.
+							</div>
+						</div>
+						<div class="col-md-6 mb-3">
+							<label>Age</label>
+							<input type="number" class="form-control" name="f_age" placeholder="Age" required>
+							<div class="invalid-feedback">
+								Please provide a valid age.
+							</div>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="col-md-6 mb-3">
+							<label>Last known location</label>
+							<input type="text" class="form-control" name="f_location" placeholder="Last known location" value="NA">
+							<div class="invalid-feedback">
+								Please provide a valid location.
+							</div>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="col-md-6 mb-3">
+							<label>Description(dress or facial)</label>
+							<textarea placeholder="Description.." name="f_description"></textarea>
+							<div class="invalid-feedback">
+								Please provide a valid descripton.
+							</div>
+						</div>
+					</div>
+					<!-- ================FOUND DETAILS END=========================== -->
+
+
+					<button class="btn btn-primary btn-block bg-info" type="submit">Submit form</button>
+				</form>
+			</div>
+		</div>
+
+		<!-- ===============FORM END=================== -->
+
+
+		<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+	'use strict';
+	window.addEventListener('load', function() {
+		console.log("hey its me");
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+    	form.addEventListener('submit', function(event) {
+    		if (form.checkValidity() === false) {
+    			event.preventDefault();
+    			event.stopPropagation();
+    		}
+    		form.classList.add('was-validated');
+    	}, false);
+    });
+}, false);
+})();
+</script>
+
+</div>
+
+
+<!-- FOOTER
+	================================================== -->
+	<% include partials/footer.ejs %>
+	<!-- =================/FOOTER===================== -->
+
+
+</div>
+<!-- JAVASCRIPTS
+	================================================== -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<!-- all-->
+	<script src="/assets/js/modernizr-latest.js"></script>
+
+	<!-- menu & scroll to top -->
+	<script src="/assets/js/common.js"></script>
+
+	<!-- CALL opacity on hover images -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("img.imgOpa").hover(function() {
+				$(this).stop().animate({opacity: "0.6"}, 'slow');
+			},
+			function() {
+				$(this).stop().animate({opacity: "1.0"}, 'slow');
+			});
+		});
+	</script>
+
+
+	<!-- CALL tabs -->
+	<script type="text/javascript">
+		$(document).ready(function() {	
+			$('#tabs li a:not(:first)').addClass('inactive');
+			$('.container:not(:first)').hide();	
+			$('#tabs li a').click(function(){		
+				var t = $(this).attr('href');
+		if($(this).hasClass('inactive')){ //added to not animate when active
+			$('#tabs li a').addClass('inactive');		
+			$(this).removeClass('inactive');
+			$('.container').hide();
+			$(t).fadeIn('slow');	
+		}			
+		return false;
+	}) //end click
+		});
+	</script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+</body>
+</html>
