@@ -9,17 +9,19 @@
 	<link rel="stylesheet" type="text/css" href="/assets/css/style.css"/>
 	<link rel="stylesheet" type="text/css" href="/assets/css/icons.css"/>
 	<link rel="stylesheet" type="text/css" href="/assets/css/slider.css"/>
-	<link rel="stylesheet" type="text/css" href="/assets/css/skinblue.css"/><!-- Change skin color here -->
+	<link rel="stylesheet" type="text/css" href="/assets/css/skinblue.css"/><!-- change skin color -->
 	<link rel="stylesheet" type="text/css" href="/assets/css/responsive.css"/>
-	<script src="/assets/js/jquery-1.9.0.min.js"></script><!-- scripts at the bottom of the document -->
+	<script src="/assets/js/jquery-1.9.0.min.js"></script><!-- the rest of the scripts at the bottom of the document -->
 </head>
 <body>
 	<div class="boxedtheme">
-<!-- TOP LOGO & MENU
-	================================================== -->
-	<% include partials/header.ejs %>
-	<!-- ================/TOP LOGO & MENU============= -->
-	
+
+
+	<!-- TOP LOGO & MENU
+		================================================== -->
+		<% include partials/header.ejs %>
+		<!-- ================/TOP LOGO & MENU============= -->
+
 <!-- HEADER
 	================================================== -->
 	<div class="undermenuarea">
@@ -36,27 +38,24 @@
 			</div>
 		</div>
 	</div>
+
 <!-- CONTENT
 	================================================== -->
-	<div class="grid">
-		<div class="shadowundertop">
-		</div>
-		<div class="row">
+	<div class="grid" style="padding-top: 3%; ">
+		<div class="row space-bot">
 			<div class="c12">
-				<h1 class="maintitle ">
-					<span>What to do before, during and after Earthquake?</span>
-				</h1>
+				<div class="royalcontent">
+					<h1 class="royalheader">What to do before, during and after Earthquake?</h1>
+				</div>
 			</div>
 		</div>
-		<div class="row">
-			
-			<!-- begin description area -->
-			<div >
-				<p>
-					<h2>BEFORE AN EARTHQUAKE</h2> 
-					<h6>
-						<ul style="list-style-type:disc">
-							
+		<h5 align="center">BEFORE AN EARTHQUAKE</h5>
+		<div class="row space-bot flex-center">
+			<div class="c8">
+				<div class="noshadowbox">
+
+					<p>
+						<ul style="list-style-type:disc;text-align: left;padding-left: 15px;">
 							<li>Make sure you have a fire extinguisher, first aid kit, a battery-powered radio, a flashlight, and extra batteries at home.
 							</li><li>Learn first aid.
 							</li><li>Learn how to turn off the gas, water, and electricity.
@@ -66,16 +65,16 @@
 							</li><li>Learn the earthquake plan at your school or workplace.
 							</li>
 						</ul>
-					</h6>	
-					
-				</p>
-				
-				<p>
-					<h2>DURING AN EARTHQUAKE</h2> 
-					<h6>
-						<ul style="list-style-type:disc">
-							
-							
+					</p>
+				</div>
+			</div>
+		</div>
+		<h5 align="center">DURING AN EARTHQUAKE</h5>
+		<div class="row space-bot flex-center">
+			<div class="c8">
+				<div class="noshadowbox">
+					<p>
+						<ul style="list-style-type:disc;text-align: left;padding-left: 15px;">
 							<li><b>Stay calm!</b> If you're indoors, stay inside. If you're outside, stay outside.
 							</li><li>If you're indoors, stand against a wall near the center of the building, stand in a doorway, or crawl under heavy furniture (a desk or table). Stay away from windows and outside doors.
 							</li><li>If you're outdoors, stay in the open away from power lines or anything that might fall. Stay away from buildings (stuff might fall off the building or the building could fall on you).
@@ -84,17 +83,16 @@
 							</li><li>Don't use elevators (they'll probably get stuck anyway).
 							</li>
 						</ul>
-					</h6>	
-					
-				</p>
-
-				<p>
-					<h2>AFTER AN EARTHQUAKE</h2> 
-					<h6>
-						<ul style="list-style-type:disc">
-							
-							
-							
+					</p>
+				</div>
+			</div>
+		</div>
+		<h5 align="center">AFTER AN EARTHQUAKE</h5>
+		<div class="row space-bot flex-center">
+			<div class="c8">
+				<div class="noshadowbox">
+					<p>
+						<ul style="list-style-type:disc;text-align: left;padding-left: 15px;">
 							<li>Check yourself and others for injuries. Provide first aid for anyone who needs it.
 							</li><li>Check water, gas, and electric lines for damage. If any are damaged, shut off the valves. Check for the smell of gas. If you smell it, open all the windows and doors, leave immediately, and report it to the authorities (use someone else's phone).
 							</li><li>Turn on the radio. Don't use the phone unless it's an emergency.
@@ -107,15 +105,12 @@
 							</li><li>Expect aftershocks.
 							</li>
 						</ul>
-					</h6>	
-					
-				</p>
-			</div><!-- end description area -->
-			
-			
+					</p>
+				</div>
+			</div>
 		</div>
-	</div><!-- end grid -->
 
+	</div><!-- end grid -->
 
 <!-- FOOTER
 	================================================== -->
@@ -131,23 +126,11 @@
 	<!-- menu & scroll to top -->
 	<script src="/assets/js/common.js"></script>
 
-	<!-- twitter -->
-	<script src="/assets/js/jquery.tweet.js"></script>
-
 	<!-- cycle -->
 	<script src="/assets/js/jquery.cycle.js"></script>
 
 	<!-- flexslider -->
 	<script src="/assets/js/jquery.flexslider-min.js"></script>
 
-	<!-- CALL flexslder -->
-	<script>
-// Can also be used with $(document).ready()
-$(window).load(function() {
-	$('.flexslider').flexslider({
-		animation: "slide"
-	});
-});
-</script>
 </body>
 </html>

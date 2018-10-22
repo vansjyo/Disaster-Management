@@ -15,11 +15,13 @@
 </head>
 <body>
 	<div class="boxedtheme">
-<!-- TOP LOGO & MENU
-	================================================== -->
-	<% include partials/header.ejs %>
-	<!-- ================/TOP LOGO & MENU============= -->
-	
+
+
+	<!-- TOP LOGO & MENU
+		================================================== -->
+		<% include partials/header.ejs %>
+		<!-- ================/TOP LOGO & MENU============= -->
+
 <!-- HEADER
 	================================================== -->
 	<div class="undermenuarea">
@@ -36,90 +38,78 @@
 			</div>
 		</div>
 	</div>
+
 <!-- CONTENT
 	================================================== -->
-	<div class="grid">
-		<div class="shadowundertop">
-		</div>
-		<div class="row">
+	<div class="grid" style="padding-top: 3%; ">
+		<div class="row space-bot">
 			<div class="c12">
-				<h1 class="maintitle ">
-					<span>What to do before, during and after Landslide?</span>
-				</h1>
+				<div class="royalcontent">
+					<h1 class="royalheader">What to do before, during and after Landslide?</h1>
+				</div>
 			</div>
 		</div>
-		<div class="row">
-			
-			<!-- begin description area -->
-			<div >
-				<p>
-					<h2>BEFORE A LANDSLIDE</h2> 
-					<h6>
-						<ul style="list-style-type:disc">
-							
-							
-							
+		<h5 align="center">BEFORE A LANDSLIDE</h5>
+		<div class="row space-bot flex-center">
+			<div class="c8">
+				<div class="noshadowbox">
+
+					<p>
+						<ul style="list-style-type:disc;text-align: left;padding-left: 15px;">
 							<li>Talk to everyone in your household about what to do if a landslide occurs.&nbsp;</li>
 							<li>Become familiar with the land around where you live and work so that you understand your risk in different situations.&nbsp;</li>
 							<li>Avoid actions that could increase instability. For example, don't undercut a steep bank; don't build near the top or base of steep slopes; don't place fill on steep slopes; and don't drain swimming pools or otherwise increase water flow down steep slopes.&nbsp;</li>
 							<li>Learn how to recognize the signs of potential imminent landslides. This could include slope cracks, slope bulges, an unusual seepage of water on the slope, sudden changes in stream flow and small rocks falling.&nbsp;</li>
 							<li>Watch the patterns of storm water drainage on slopes near your home, especially where runoff water converges.&nbsp;</li>
 							<li>Know who to notify if you see these signs. Have municipal emergency contact numbers on hand.</li>
-
 						</ul>
-					</h6>	
-					
-				</p>
-				
-				<p>
-					<h2>DURING A LANDSLIDE</h2> 
-					<h6>
-						<ul style="list-style-type:disc">
-							
-							
-							
+					</p>
+				</div>
+			</div>
+		</div>
+		<h5 align="center">DURING A LANDSLIDE</h5>
+		<div class="row space-bot flex-center">
+			<div class="c8">
+				<div class="noshadowbox">
+					<p>
+						<ul style="list-style-type:disc;text-align: left;padding-left: 15px;">
 							<li>If you suspect imminent danger evacuate immediately. Inform affected neighbours if you can, and contact your public works, fire or police department.&nbsp;</li>
 							<li>Listen for unusual sounds that might indicate moving debris, such as trees cracking or boulders knocking together.&nbsp;</li>
-							<h4>If indoors:</h4>
+							<h5>If indoors:</h5>
 							<ul style="list-style-type:disc">
 								<li>Find cover in the part of the building that is the furthest from the approaching landslide.</li>
 								<li>Take shelter under a strong table or a bench.</li>
 								<li>Hold on firmly and stay put until all movement has stopped.</li>
 							</ul>
-							<h4>If outdoors:</h4>
+							<h5>If outdoors:</h5>
 							Move quickly away from its likely path, keeping clear of embankments, trees, power lines and poles.<br>
 							Stay away from the landslide area. The slope may experience additional failures for hours to days afterwards.<br>
 						</ul>
-						<h4>If you are in your car:&nbsp;</h4>	
-						<h6> Watch for collapsed pavement, mud, fallen rocks and other indications of possible debris flow. </h6>
-					</h6>
-					
-				</p>
-
-				<p>
-					<h2>AFTER A LANDSLIDE</h2> 
-					<h6>
-						<ul style="list-style-type:disc">
-							
-							
-							
-							
+						
+						</ul>
+					</p>
+				</div>
+			</div>
+		</div>
+		<h5 align="center">AFTER A LANDSLIDE</h5>
+		<div class="row space-bot flex-center">
+			<div class="c8">
+				<div class="noshadowbox">
+					<p>
+						<ul style="list-style-type:disc;text-align: left;padding-left: 15px;">
 							<li>Listen to the radio for further instructions from officials.&nbsp;</li>
 							<li>Stay away from the slide area until local officials say it is safe to enter.&nbsp;</li>
 							<li>Look for and report broken utility lines to appropriate authorities. Reporting potential hazards will get the utilities turned off as quickly as possible, preventing further hazard and injury.&nbsp;</li>
 							<li>Check your home's foundation, chimney and surrounding land for damage.</li>
 							<li>Replant damaged ground as soon as possible because erosion caused by loss of ground cover can lead to flash flooding.</li>
 							<li>If you suspect your home is unsafe, do not enter. Rely on the professionals to clear your home for re-entry, if you are unsure.&nbsp;</li>
-
 							
 						</ul>
-					</h6>	
-					
-				</p>
-			</div><!-- end description area -->
-			
-			
+					</p>
+				</div>
+			</div>
 		</div>
+
 	</div><!-- end grid -->
 
 <!-- FOOTER
@@ -136,25 +126,11 @@
 	<!-- menu & scroll to top -->
 	<script src="/assets/js/common.js"></script>
 
-	<!-- slider -->
-	<script src="/assets/js/jquery.cslider.js"></script>
-
 	<!-- cycle -->
 	<script src="/assets/js/jquery.cycle.js"></script>
 
-	<!-- carousel items -->
-	<script src="/assets/js/jquery.carouFredSel-6.0.3-packed.js"></script>
+	<!-- flexslider -->
+	<script src="/assets/js/jquery.flexslider-min.js"></script>
 
-	<!-- twitter -->
-	<script src="/assets/js/jquery.tweet.js"></script>
-	<!-- CALL flexslder -->
-	<script>
-// Can also be used with $(document).ready()
-$(window).load(function() {
-	$('.flexslider').flexslider({
-		animation: "slide"
-	});
-});
-</script>
 </body>
 </html>

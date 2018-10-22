@@ -15,11 +15,13 @@
 </head>
 <body>
 	<div class="boxedtheme">
-<!-- TOP LOGO & MENU
-	================================================== -->
-	<% include partials/header.ejs %>
-	<!-- ================/TOP LOGO & MENU============= -->
-	
+
+
+	<!-- TOP LOGO & MENU
+		================================================== -->
+		<% include partials/header.ejs %>
+		<!-- ================/TOP LOGO & MENU============= -->
+
 <!-- HEADER
 	================================================== -->
 	<div class="undermenuarea">
@@ -36,27 +38,24 @@
 			</div>
 		</div>
 	</div>
+
 <!-- CONTENT
 	================================================== -->
-	<div class="grid">
-		<div class="shadowundertop">
-		</div>
-		<div class="row">
+	<div class="grid" style="padding-top: 3%; ">
+		<div class="row space-bot">
 			<div class="c12">
-				<h1 class="maintitle ">
-					<span>What to do before, during and after Volcanic Eruption?</span>
-				</h1>
+				<div class="royalcontent">
+					<h1 class="royalheader">What to do before, during and after Volcanic Eruption?</h1>
+				</div>
 			</div>
 		</div>
-		<div class="row">
-			
-			<!-- begin description area -->
-			<div >
-				<p>
-					<h2>BEFORE A VOLCANIC ERUPTION</h2> 
-					<h6>
-						<ul style="list-style-type:disc">
-							
+		<h5 align="center">BEFORE A VOLCANIC ERUPTION</h5>
+		<div class="row space-bot flex-center">
+			<div class="c8">
+				<div class="noshadowbox">
+
+					<p>
+						<ul style="list-style-type:disc;text-align: left;padding-left: 15px;">
 							<li>Each one should be aware of the dangers that volcanic eruptions pose to lives and be prepared to face whatever circumstances the eruption may bring.</li>
 
 							<li>Prepare all necessary things to bring once evacuation is needed. Those in danger zones are warned when to evacuate. Once given the signal refrain from saying you will be all right. Refusing to evacuate will pose more serious problems.</li>
@@ -65,17 +64,17 @@
 							<li>Volcanic eruptions have ash falls so be prepared for masks or anything to cover nose and mouth.</li>
 							<li>Prioritize the safety of kids before other things. If you have relatives or friends who are far from the volcano, take your children there until such time that your place is safe.</li>
 						</ul>
-					</h6>	
-					
-				</p>
-				
-				<p>
-					<h2>DURING A VOLCANIC ERUPTION</h2> 
-					<h6>
-						<ul style="list-style-type:disc">
-							
-							
-							<li>Avoid all low-lying places because lava flows and mudflows are more likely to pass here.</li>
+					</p>
+				</div>
+			</div>
+		</div>
+		<h5 align="center">DURING A VOLCANIC ERUPTION</h5>
+		<div class="row space-bot flex-center">
+			<div class="c8">
+				<div class="noshadowbox">
+					<p>
+						<ul style="list-style-type:disc;text-align: left;padding-left: 15px;">
+							li>Avoid all low-lying places because lava flows and mudflows are more likely to pass here.</li>
 
 							<li>Seek cover in case of ash falls rock falls.</li>
 							
@@ -87,16 +86,16 @@
 							
 							<li>Stay in the evacuation center until further instructions. Do not attempt to leave the place unless told to do.</li>
 						</ul>
-					</h6>	
-					
-				</p>
-
-				<p>
-					<h2>AFTER A VOLCANIC ERUPTION</h2> 
-					<h6>
-						<ul style="list-style-type:disc">
-							
-							
+					</p>
+				</div>
+			</div>
+		</div>
+		<h5 align="center">AFTER A VOLCANIC ERUPTION</h5>
+		<div class="row space-bot flex-center">
+			<div class="c8">
+				<div class="noshadowbox">
+					<p>
+						<ul style="list-style-type:disc;text-align: left;padding-left: 15px;">
 							<li>Go back to your house but leave the kids behind someone who can take care of them while you check your house.</li>
 
 							<li>Clean everything around and check all damages incurred.</li>
@@ -107,15 +106,12 @@
 							
 							<li>Make sure that your house is still safe for all of you.</li>
 							
-							
 						</ul>
-					</h6>	
-					
-				</p>
-			</div><!-- end description area -->
-			
-			
+					</p>
+				</div>
+			</div>
 		</div>
+
 	</div><!-- end grid -->
 
 <!-- FOOTER
@@ -132,25 +128,11 @@
 	<!-- menu & scroll to top -->
 	<script src="/assets/js/common.js"></script>
 
-	<!-- slider -->
-	<script src="/assets/js/jquery.cslider.js"></script>
-
 	<!-- cycle -->
 	<script src="/assets/js/jquery.cycle.js"></script>
 
-	<!-- carousel items -->
-	<script src="/assets/js/jquery.carouFredSel-6.0.3-packed.js"></script>
+	<!-- flexslider -->
+	<script src="/assets/js/jquery.flexslider-min.js"></script>
 
-	<!-- twitter -->
-	<script src="/assets/js/jquery.tweet.js"></script>
-	<!-- CALL flexslder -->
-	<script>
-// Can also be used with $(document).ready()
-$(window).load(function() {
-	$('.flexslider').flexslider({
-		animation: "slide"
-	});
-});
-</script>
 </body>
 </html>
