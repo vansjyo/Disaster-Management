@@ -42,7 +42,12 @@ module.exports = function(app, passport){
 app.get('/autocomplete/:search/:categ',autocomplete.find);
 
 app.get('/', function(req, res){
-  res.render('home.ejs');
+  var reported= [];
+  Found.find({ status:"found"},function(err, result) {
+   if (err) throw err;
+   reported = result;
+   res.render('home.ejs', { people : reported });
+ });
 });
 
 app.get('/avalanche', function(req, res){
@@ -168,7 +173,7 @@ app.post('/reportMissing', function(req, res){
     missing_location: req.body.m_location,
     missing_gender: req.body.m_gender,
     missing_age: req.body.m_age,
-    missing_photo: req.body.m_photo,
+    missing_photo: "",
     status: "missing"
   });
   report.save(function(err){
@@ -205,7 +210,7 @@ app.post('/reportFound', function(req, res){
     found_location: req.body.f_location,
     found_gender: req.body.f_gender,
     found_age: req.body.f_age,
-    found_photo: req.body.f_photo,
+    found_photo: "",
     status: "found"
   });
   found.save(function(err){
