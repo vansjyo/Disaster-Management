@@ -68,7 +68,7 @@ module.exports = function(app, passport){
         });
       }
     });
-}, 60 * 1000); // 20*60 * 1000 milsec  //as our thingspeak channel is set on an update for every 30 minutes.
+}, 10*60 * 1000); // 20*60 * 1000 milsec  //as our thingspeak channel is set on an update for every 30 minutes.
 
 
 //#1
