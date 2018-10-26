@@ -20,7 +20,7 @@ var series = require('run-series');
 var NodeGeocoder = require('node-geocoder');
 var ThingSpeakClient = require('thingspeakclient');
 var client = new ThingSpeakClient();
-var client = new ThingSpeakClient({server:'http://localhost:8000'});
+var client = new ThingSpeakClient({server:'https://aayuda.azurewebsites.net'});
 var client = new ThingSpeakClient({useTimeoutMode:false}); // disable client timeout handling between update request per channel
 var client = new ThingSpeakClient({updateTimeout:20000}); // set the timeout to 20s (Note: 15 seconds is the default value), the timeout value is in milliseconds
 client.attachChannel(609181, { readKey:'YOJ725Q23K7K8MXJ'});
