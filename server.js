@@ -25,8 +25,13 @@ var options = {
   apiKey: 'AIzaSyCoij47a8-utP5nX1fe3rBf41FyESjAbWc', // for Mapquest, OpenCage, Google Premier
   formatter: null         // 'gpx', 'string', ...
 };
+var ThingSpeakClient = require('thingspeakclient');
+var client = new ThingSpeakClient();
+var client = new ThingSpeakClient({server:'http://localhost:8000'});
+var client = new ThingSpeakClient({useTimeoutMode:false}); // disable client timeout handling between update request per channel
+var client = new ThingSpeakClient({updateTimeout:20000}); // set the timeout to 20s (Note: 15 seconds is the default value), the timeout value is in milliseconds
+client.attachChannel(609181, { readKey:'YOJ725Q23K7K8MXJ'});
 
- 
 app.use(busboy());
 app.use(compression());
 app.use(helmet());

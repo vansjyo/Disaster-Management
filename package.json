@@ -4,6 +4,7 @@
   "description": "since we do not know that the order db will remain permanant or not, therefore we save a permanat instance of it in the user's orderlist field.",
   "main": "server.js",
   "dependencies": {
+    "alert-node": "^1.2.2",
     "assert": "^1.4.1",
     "async": "^2.6.0",
     "autocomplete": "0.0.1",
@@ -21,6 +22,7 @@
     "formidable": "^1.2.0",
     "google-scholar-extended": "^1.0.1",
     "helmet": "^3.13.0",
+    "hoek": "^5.0.4",
     "jquery-validation": "^1.17.0",
     "mongo": "^0.1.0",
     "mongodb": "^2.2.36",
@@ -39,7 +41,8 @@
     "run-series": "^1.1.8",
     "sendotp": "^1.2.8",
     "socket.io": "^2.1.1",
-    "sweetalert": "^2.0.8"
+    "sweetalert": "^2.0.8",
+    "thingspeakclient": "^0.4.0"
   },
   "devDependencies": {},
   "scripts": {

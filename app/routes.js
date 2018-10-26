@@ -1,5 +1,6 @@
 var Missing = require('./models/missing');
 var Found = require('./models/found');
+var Notify = require('./models/notify');
 var flash = require('express-flash');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
@@ -8,6 +9,7 @@ var async = require('async');
 var crypto = require('crypto');
 var fs = require('fs');
 var path = require('path');
+var alert = require('alert-node');
 var busboy = require('connect-busboy');
 var nodemailer = require('nodemailer');
 var express= require('express');
@@ -16,9 +18,17 @@ var autocomplete=require('../app/autocomplete.js');
 var formidable = require('formidable');
 var series = require('run-series');
 var NodeGeocoder = require('node-geocoder');
+var ThingSpeakClient = require('thingspeakclient');
+var client = new ThingSpeakClient();
+var client = new ThingSpeakClient({server:'http://localhost:8000'});
+var client = new ThingSpeakClient({useTimeoutMode:false}); // disable client timeout handling between update request per channel
+var client = new ThingSpeakClient({updateTimeout:20000}); // set the timeout to 20s (Note: 15 seconds is the default value), the timeout value is in milliseconds
+client.attachChannel(609181, { readKey:'YOJ725Q23K7K8MXJ'});
+
+
 // var options = {
 //   provider: 'google',
- 
+
 //   // Optional depending on the providers
 //   httpAdapter: 'https', // Default
 //   apiKey: 'AIzaSyCoij47a8-utP5nX1fe3rBf41FyESjAbWc', // for Mapquest, OpenCage, Google Premier
@@ -37,6 +47,29 @@ var NodeGeocoder = require('node-geocoder');
 
 module.exports = function(app, passport){
 
+  setInterval(function() {
+    // your code goes here...
+    client.getLastEntryInFieldFeed(609181,1 ,function(err,result){
+      if(err) 
+        throw err;
+      console.log("10 minutes");
+      console.log(result.field1);
+      if(result.field1<52){
+        alert('The temperature has dropped below 50F. Be aware.');
+        var notif = new Notify({
+          notif : "The temperature has dropped below 50F. Be aware",
+          date : new Date()
+          
+        });
+        console.log(Date.now());
+        notif.save(function(err){
+          if ( err ) throw err;
+          console.log("Notification saved successfully");
+        });
+      }
+    });
+}, 30*60 * 1000); // 20*60 * 1000 milsec  //as our thingspeak channel is set on an update for every 30 minutes.
+
 
 //#1
 app.get('/autocomplete/:search/:categ',autocomplete.find);
@@ -47,6 +80,15 @@ app.get('/', function(req, res){
    if (err) throw err;
    reported = result;
    res.render('home.ejs', { people : reported });
+ });
+});
+
+app.get('/notifications', function(req, res){
+  var notify = [];
+  Notify.find({},function(err, result) {
+   if (err) throw err;
+   notify = result;
+   res.render('notifications.ejs', { notifs : notify });
  });
 });
 
@@ -90,7 +132,9 @@ app.get('/report', function(req, res){
   res.render('report.ejs');
 });
 
-
+app.get('/thingspeakcharts', function(req, res){
+  res.render('thingspeakcharts.ejs');
+});
 
 app.get('/reportMissing', function(req, res){
   res.render('reportMissing.ejs');
@@ -112,6 +156,8 @@ app.get('/findFound', function(req, res){
    res.render('findFound.ejs', { people_found : people_found });
  });
 });
+
+
 
 app.get('/findMissing', function(req, res){
   var people_missing = [];
@@ -252,29 +298,5 @@ app.post('/upload_photo/:type/:id', function(req, res){
   });
 });
 
-//#9
-app.get('/admin', isLoggedIn, function(req, res){
-  if(req.Found.local.admin == "owner"){
-    res.render('admin.ejs', { Found: req.Found });}
-    else res.end();
-  });
-
-//#20
-app.get('/logout', function(req, res){
-  req.logout();
-  res.redirect('/');
-});
 
 };
-
-
-
-
-
-function isLoggedIn(req, res, next) {
-  if(req.isAuthenticated()){
-    return next();
-  }
-
-  res.redirect('/login');
-}

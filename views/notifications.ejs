@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width"/>
+	<meta charset="UTF-8">
+	<title>Salique Theme Multipurpose Responsive </title>
+<!-- STYLES & JQUERY 
+	================================================== -->
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="/assets/css/icons.css"/>
+	<link rel="stylesheet" type="text/css" href="/assets/css/slider.css"/>
+	<link rel="stylesheet" type="text/css" href="/assets/css/skinblue.css"/><!-- change skin color -->
+	<link rel="stylesheet" type="text/css" href="/assets/css/responsive.css"/>
+	<script src="/assets/js/jquery-1.9.0.min.js"></script><!-- the rest of the scripts at the bottom of the document -->
+</head>
+<body>
+	<div class="boxedtheme">
+
+
+	<!-- TOP LOGO & MENU
+		================================================== -->
+		<% include partials/header.ejs %>
+		<!-- ================/TOP LOGO & MENU============= -->
+
+<!-- HEADER
+	================================================== -->
+	<div class="undermenuarea">
+		<div class="boxedshadow">
+		</div>
+		<div class="grid">
+			<div class="row">
+				<div class="c8">
+					<h1 class="titlehead">NOTIFICATIONS</h1>
+				</div>
+				<div class="c4">
+					<h1 class="titlehead rightareaheader"> </h1>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- CONTENT
+	================================================== -->
+	<div class="grid" style="padding-top: 3%; ">
+		<div class="row space-bot">
+			<div class="c12">
+				<div class="royalcontent">
+					<h1 class="royalheader">Important Notifications</h1>
+				</div>
+			</div>
+		</div>
+
+		<div class="row space-bot">
+			<%  var i; %>
+			<%for(i=notifs.length-1;i>=0;i--){ %>
+			<div class="c12">
+				<div class="wrapaction">
+					<div class="c9">
+						<h1 class="subtitles">Temperature Rise</h1>
+						<%=notifs[i].notif %>
+					</div>
+					<div class="c3 text-center" style="margin-top:40px;">
+						<%=notifs[i].date %>
+					</div>
+				</div>
+			</div>
+			<% } %>
+		</div>
+		
+		
+		
+
+	</div><!-- end grid -->
+
+<!-- FOOTER
+	================================================== -->
+	<% include partials/footer.ejs %>
+	<!-- =================/FOOTER===================== -->
+
+</div>
+<!-- JAVASCRIPTS
+	================================================== -->
+	<!-- all -->
+	<script src="/assets/js/modernizr-latest.js"></script>
+
+	<!-- menu & scroll to top -->
+	<script src="/assets/js/common.js"></script>
+
+	<!-- cycle -->
+	<script src="/assets/js/jquery.cycle.js"></script>
+
+	<!-- flexslider -->
+	<script src="/assets/js/jquery.flexslider-min.js"></script>
+
+</body>
+</html>
