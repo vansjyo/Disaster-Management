@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>AYUDA</title>
+	<title>AYUDA </title>
 <!-- STYLES & JQUERY 
 	================================================== -->
 	<meta charset="utf-8">
@@ -23,6 +23,7 @@
 	<% include partials/header.ejs %>
 	<!-- ================/TOP LOGO & MENU============= -->
 
+
 <!-- SUBHEADER
 	================================================== -->
 	<% include partials/sub_header.ejs %>
@@ -32,6 +33,7 @@
 <!-- CONTENT
 	================================================== -->
 
+
 <!-- ALERT MESSAGE
 	================================================== -->
 	<% if(messages.info){ %>
@@ -39,7 +41,7 @@
 		<%= messages.info %>
 	</div>
 	<% } %>
-	<!--=================/ALERT=========================== -->
+	<!--===================/ALERT===================== -->
 
 
 <!-- FORM
@@ -50,53 +52,59 @@
 			<!--INTRO-->
 			<div class="c12">
 				<div class="royalcontent">
-					<h1 class="royalheader">REPORT MISSING PEOPLE</h1>
+					<h1 class="royalheader">Cancel Reported People</h1>
 				</div>
 			</div>
-			<!--INTRO-->
-			<div class="c12">
-				<div class="royalcontent">
-					<h1 class="h6 border">Upload photo(optional)</h1>
-				</div>
-			</div>
+
 		</div>
 
 		<div class="row d-flex justify-content-center space-bot">
 			<div class="col-md-9 border border-primary">
 
+				<!-- note -->
+				<div class="h6 bg-info" style="padding: 10px;">NOTE : Use your reference ID provided to you during reporting to cancel your report request.</div>
 
 				<!-- FORM start -->
-				<form method="post"  enctype="multipart/form-data" style="padding: 10px;">
+				<form action="/cancelReport" method="post" class="needs-validation" novalidate style="padding: 10px;">
 
-					<!-- info -->
-					<div class="border h6"><span class="glyphicon glyphicon-info-sign"></span>
-						Please upload photo of the person you are reporting
-					</div><br>
 
-				<!-- FORM FOR REPORTING PERSON DETAILS
+				<!-- FORM FOR CANCELLING REPORT
 					============================================= -->
 					<div class="form-row">
-						<div class="col-md-6 mb-3">
-							<div class="custom-file">
-								<input type="file" class="custom-file-input" name="m_photo" value="NA">
-								<label class="custom-file-label">Add photo</label>
+						<div class="col-md-12 mb-3">
+							<label>Enter Reference ID*</label>
+							<input type="text" class="form-control" name="cancel_ID" placeholder="contactnumber@xyz" required>
+							<div class="invalid-feedback">
+								Please provide an ID.
 							</div>
 						</div>
 					</div>
-					<!-- ================MISSING DETAILS END=========================== -->
+					<div class="form-row">
+						<div class="col-md-6 mb-3">
+							<label>Choose Cancel Type</label>
+							<select id="cancel_type" name="cancel_type" class="custom-select" required>
+								<option selected disabled="true">Open this select menu</option>
+								<option value="found">Found</option>
+								<option value="missing">Missing</option>
+							</select>
+							<div class="invalid-feedback">
+								Please provide a valid state.
+							</div>
+						</div>
+					</div>
+
+					<!-- ================END=========================== -->
 
 
 					<button class="btn btn-primary btn-block bg-info" type="submit">Submit form</button>
 				</form>
-				<a href="/" type="button" class="btn btn-primary bg-info">SKIP<small>I don't have a photo</small></a>
 			</div>
 		</div>
 
 		<!-- ===============FORM END=================== -->
-	</div>
 
 
-<script>
+		<script>
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {
 	'use strict';
@@ -118,7 +126,7 @@
 })();
 </script>
 
-
+</div>
 
 
 <!-- FOOTER

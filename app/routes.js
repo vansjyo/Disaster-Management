@@ -20,7 +20,7 @@ var series = require('run-series');
 var NodeGeocoder = require('node-geocoder');
 var ThingSpeakClient = require('thingspeakclient');
 var client = new ThingSpeakClient();
-var client = new ThingSpeakClient({server:'https://aayuda.azurewebsites.net/'});
+var client = new ThingSpeakClient({server:'http://localhost:8000'});
 var client = new ThingSpeakClient({useTimeoutMode:false}); // disable client timeout handling between update request per channel
 var client = new ThingSpeakClient({updateTimeout:20000}); // set the timeout to 20s (Note: 15 seconds is the default value), the timeout value is in milliseconds
 client.attachChannel(609181, { readKey:'YOJ725Q23K7K8MXJ'});
@@ -132,6 +132,10 @@ app.get('/report', function(req, res){
   res.render('report.ejs');
 });
 
+app.get('/cancel_Report', function(req, res){
+  res.render('cancel_Report.ejs');
+});
+
 app.get('/thingspeakcharts', function(req, res){
   res.render('thingspeakcharts.ejs');
 });
@@ -155,6 +159,26 @@ app.get('/findFound', function(req, res){
    people_found = result;
    res.render('findFound.ejs', { people_found : people_found });
  });
+});
+
+app.post('/cancelReport', function(req, res){
+  if(req.body.cancel_type == "found"){
+    Found.findOneAndUpdate({ reporter_ID:req.body.cancel_ID,status:"found"},function(err, result) {
+     if (err) throw err;
+     result.status = "match found";
+     req.flash('info', 'Your reported person has been removed.' );
+     res.render('report.ejs');
+   });
+  }
+   if(req.body.cancel_type == "missing"){
+    Missing.findOneAndUpdate({ reporter_ID:req.body.cancel_ID,status:"missing"},function(err, result) {
+     if (err) throw err;
+     result.status = "match found";
+     req.flash('info', 'Your reported person has been removed.' );
+     res.render('report.ejs');
+   });
+  }
+  else{res.render('report.ejs');}
 });
 
 
@@ -226,7 +250,7 @@ app.post('/reportMissing', function(req, res){
     if ( err ) throw err;
     console.log("Missing person saved successfully");
   });
-  req.flash('info', 'Missing person has been successfully added to the database');
+  req.flash('info', 'Missing person has been successfully added to the database \n Your reference ID is' + report.reporter_ID +' \n .this should be used for cancelling your reported person' );
   res.redirect('/upload_photo/' + "missing/" + report._id);
 
 });
@@ -238,7 +262,7 @@ app.get('/upload_photo/:type/:id', function(req, res) {
 
 app.post('/reportFound', function(req, res){
   var rand = Math.floor((Math.random()*1000)+1).toString();
-  var id= req.body.r_contact1 + "@" + rand;
+  var id= req.body.rf_contact1 + "@" + rand;
   var found = new Found({
     reporter_ID: id,
     reporter_name : req.body.rf_name,
