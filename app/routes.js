@@ -23,7 +23,7 @@ var client = new ThingSpeakClient();
 var client = new ThingSpeakClient({server:'https://aayuda.azurewebsites.net'});
 var client = new ThingSpeakClient({useTimeoutMode:false}); // disable client timeout handling between update request per channel
 var client = new ThingSpeakClient({updateTimeout:20000}); // set the timeout to 20s (Note: 15 seconds is the default value), the timeout value is in milliseconds
-client.attachChannel(609181, { readKey:'YOJ725Q23K7K8MXJ'});
+client.attachChannel(609181, { readKey:'*****************'});
 
 
 // var options = {
@@ -31,7 +31,7 @@ client.attachChannel(609181, { readKey:'YOJ725Q23K7K8MXJ'});
 
 //   // Optional depending on the providers
 //   httpAdapter: 'https', // Default
-//   apiKey: 'AIzaSyCoij47a8-utP5nX1fe3rBf41FyESjAbWc', // for Mapquest, OpenCage, Google Premier
+//   apiKey: '*******************', // for Mapquest, OpenCage, Google Premier
 //   formatter: null         // 'gpx', 'string', ...
 // };
 // var geocoder = NodeGeocoder(options);
