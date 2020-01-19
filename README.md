@@ -21,14 +21,27 @@ Dataset will be required for the purpose of making predictions from weather repo
 
 ## What technologies are we using?
 #### Technologies to be used:
-* Node.js
+* HTML5, CSS, Node.js
 * MongoDB
-* HTML5
-* CSS
+
 #### APIs to be used:
 * HTML5 Geolocation API: For the purpose of tracking current location
 * ThingSpeak API: For collecting and storing sensor data in the cloud and making weather predictions
 
-
+## UI 
+![Home](https://github.com/vansjyo/Disaster-Management/blob/master/Screenshots/home.png)
+`Page 1 of 7`
+![thinsgspeakchart](https://github.com/vansjyo/Disaster-Management/blob/master/Screenshots/thingspeakChart.png)
+`Page 2 of 7`
+![notifications](https://github.com/vansjyo/Disaster-Management/blob/master/Screenshots/notifs.png)
+`Page 3 of 7`
+![Report](https://github.com/vansjyo/Disaster-Management/blob/master/Screenshots/report.png)
+`Page 4 of 7`
+![Form](https://github.com/vansjyo/Disaster-Management/blob/master/Screenshots/form.png)
+`Page 5 of 7`
+![Find](https://github.com/vansjyo/Disaster-Management/blob/master/Screenshots/find.png)
+`Page 6 of 7`
+![SOS](https://github.com/vansjyo/Disaster-Management/blob/master/Screenshots/SOSGuide.png)
+`Page 7 of 7`
 
 
