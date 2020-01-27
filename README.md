@@ -29,6 +29,7 @@ Dataset will be required for the purpose of making predictions from weather repo
 * ThingSpeak API: For collecting and storing sensor data in the cloud and making weather predictions
 
 ## UI 
+(Credits - [Salique CSS Template](https://www.free-css.com/free-css-templates/page214/salique-v1.0))
 ![Home](https://github.com/vansjyo/Disaster-Management/blob/master/Screenshots/home.png)
 `Page 1 of 7`
 ![thinsgspeakchart](https://github.com/vansjyo/Disaster-Management/blob/master/Screenshots/thingspeakChart.png)
