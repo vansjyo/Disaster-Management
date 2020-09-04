@@ -25,7 +25,7 @@
     "hoek": "^5.0.4",
     "jquery-validation": "^1.17.0",
     "mongo": "^0.1.0",
-    "mongodb": "^2.2.36",
+    "mongodb": "^3.1.13",
     "mongodb-core": "^3.0.9",
     "mongoose": "^5.7.5",
     "mongoose-type-email": "^1.0.9",
