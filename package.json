@@ -40,7 +40,7 @@
     "passport-local": "^1.0.0",
     "run-series": "^1.1.8",
     "sendotp": "^1.2.8",
-    "socket.io": "^2.1.1",
+    "socket.io": "^2.4.0",
     "sweetalert": "^2.0.8",
     "thingspeakclient": "^0.4.0"
   },
