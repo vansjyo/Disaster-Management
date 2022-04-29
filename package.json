@@ -6,7 +6,7 @@
   "dependencies": {
     "alert-node": "^1.2.2",
     "assert": "^1.4.1",
-    "async": "^2.6.0",
+    "async": "^2.6.4",
     "autocomplete": "0.0.1",
     "bcrypt": "*",
     "bson": "^1.0.6",
